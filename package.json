@@ -1,0 +1,34 @@
+{
+  "name": "sequelize-transforms",
+  "version": "1.0.0",
+  "description": "Sequelize plugin to add configurable attribute transforms.",
+  "homepage": "https://github.com/allmas-tn/sequelize-transforms#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "sequelize",
+    "transforms",
+    "trim",
+    "uppercase",
+    "lowercase"
+  ],
+  "author": "Haykel Ben Jemia <hbj@allmas-tn.com> (http://www.allmas-tn.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/allmas-tn/sequelize-transforms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allmas-tn/sequelize-transforms/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.10.0",
+    "sequelize": "^3.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "sqlite3": "^3.0.9"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  }
+}
