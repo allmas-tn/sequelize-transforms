@@ -64,6 +64,20 @@ describe('Sequelize transforms', function() {
     sequelize = new Sequelize('db', 'u', 'p', {dialect: 'sqlite'});
   });
 
+  it('default transforms should not fail for null values', function() {
+    sequelizeTransforms(sequelize);
+
+    var Model = defineModel();
+
+    assert.doesNotThrow(function() {
+      Model.build({
+        trim: null,
+        lowercase: null,
+        uppercase: null
+      });
+    });
+  });
+
   it('should run default transforms on configured attributes', function() {
     sequelizeTransforms(sequelize);
 
