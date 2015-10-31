@@ -5,13 +5,13 @@ var Sequelize = require('sequelize');
 
 var defaultTransforms = {
   trim: function(val, definition) {
-    return definition['trim'] ? val.toString().trim() : val;
+    return definition['trim'] && val ? val.toString().trim() : val;
   },
   lowercase: function(val, definition) {
-    return definition['lowercase'] ? val.toString().toLowerCase() : val;
+    return definition['lowercase'] && val ? val.toString().toLowerCase() : val;
   },
   uppercase: function(val, definition) {
-    return definition['uppercase'] ? val.toString().toUpperCase() : val;
+    return definition['uppercase'] && val ? val.toString().toUpperCase() : val;
   }
 };
 
