@@ -1,6 +1,5 @@
 'use strict';
 
-var _ = require('lodash');
 var Sequelize = require('sequelize');
 
 var defaultTransforms = {
@@ -17,7 +16,7 @@ var defaultTransforms = {
 
 function init(target, transforms) {
   if (target instanceof Sequelize.Model) {
-    transforms = _.defaults(_.clone(transforms || {}), defaultTransforms);
+    transforms = Object.assign({}, defaultTransforms, transforms || {});
 
     var names = Object.keys(transforms);
     var refresh = false;
