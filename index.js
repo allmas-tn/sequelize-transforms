@@ -15,7 +15,7 @@ var defaultTransforms = {
 };
 
 function init(target, transforms) {
-  if (target instanceof Sequelize.Model || Sequelize.isPrototypeOf(target)) {
+  if (Sequelize.Model.isPrototypeOf(target)) {
     transforms = Object.assign({}, defaultTransforms, transforms || {});
 
     var names = Object.keys(transforms);
