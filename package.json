@@ -21,9 +21,9 @@
     "url": "https://github.com/allmas-tn/sequelize-transforms/issues"
   },
   "devDependencies": {
-    "lodash": "^3.10.0",
-    "mocha": "^2.2.5",
-    "sequelize": "^4.13.3",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "sequelize": "^4.13.5",
     "sqlite3": "^3.1.13"
   },
   "scripts": {
