@@ -30,7 +30,7 @@ To activate the plugin on specific models, call the plugin on the models:
 var sequelizeTransforms = require('sequelize-transforms');
 
 var Model = sequelize.define('Model', { /* model definition */ });
-sequelizeTransforms(sequelize, Model);
+sequelizeTransforms(Model);
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ The plugin comes with the following predefined transforms:
 It is possible to override predefined transforms or add your own by passing an object as the second argument:
 
 ```js
-sequelizeTransforms(sequelize, null, {
+sequelizeTransforms(sequelize, {
   trim: function(val, defintion) {
     return val.toString().replace(/ /g, '*');
   },
