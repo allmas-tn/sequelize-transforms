@@ -94,7 +94,7 @@ describe('Sequelize transforms', function() {
   });
 
   it('should run custom transforms', function() {
-    sequelizeTransforms(sequelize, {
+    sequelizeTransforms(sequelize, null,{
       trim: function(val, defintion) {
         return val.toString().replace(/ /g, '*');
       },
@@ -122,7 +122,7 @@ describe('Sequelize transforms', function() {
 
     assert.strictEqual(instance.trim, '  Test String  ');
 
-    sequelizeTransforms(Model);
+    sequelizeTransforms(Sequelize, Model);
     instance = Model.build(instanceDefinition);
 
     assert.strictEqual(instance.trim, 'Test String');

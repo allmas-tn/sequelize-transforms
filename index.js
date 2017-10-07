@@ -14,8 +14,8 @@ var defaultTransforms = {
   }
 };
 
-function init(target, transforms) {
-  if (target instanceof Sequelize.Model) {
+function init(Sequelize, target, transforms) {
+  if (Sequelize.Model.isPrototypeOf(target)) {
     transforms = Object.assign({}, defaultTransforms, transforms || {});
 
     var names = Object.keys(transforms);
@@ -57,8 +57,8 @@ function init(target, transforms) {
       target.refreshAttributes();
   }
   else {
-    target.afterDefine(function(Model) {
-      init(Model, transforms);
+    Sequelize.afterDefine(function(Model) {
+      init(Sequelize, Model, transforms);
     });
   }
 }
