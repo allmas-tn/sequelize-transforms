@@ -61,7 +61,7 @@ function defineModel() {
 describe('Sequelize transforms', function() {
 
   beforeEach(function() {
-    sequelize = new Sequelize('db', 'u', 'p', {dialect: 'sqlite'});
+    sequelize = new Sequelize('db', 'u', 'p', {dialect: 'sqlite', operatorsAliases: false});
   });
 
   it('default transforms should not fail for null values', function() {
